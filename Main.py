@@ -26,6 +26,7 @@ class Evaluate:
     Returns:
       True if it is empty, else returns False.
     """
+    # Write your code here
     if self.top == -1:
       return True
     else:
@@ -38,6 +39,7 @@ class Evaluate:
     Returns:
       The data which is popped out if the stack is not empty.
     """
+    # Write your code here
     if not self.isEmpty():
       self.stack.pop()
 
@@ -48,6 +50,7 @@ class Evaluate:
     Arguments:
       operand: The operand to be pushed.
     """
+    # Write your code here
     if self.top != self.size_of_stack - 1:
       self.stack.append(operand)
 
@@ -60,6 +63,7 @@ class Evaluate:
     Returns:
       True if the expression is valid, else returns False.
     """
+    # Write your code here
     nums = 0
     ops = 0
     for element in expression:
@@ -81,6 +85,7 @@ class Evaluate:
     Returns:
       The result of evaluated postfix expression.
     """
+    # Write your code here
     stack = []
     for i in expression:
       if i.isnumeric():
@@ -106,7 +111,7 @@ class Evaluate:
 # Do not change the following code
 postfix_expression = input()  # Read postfix expression
 tokens = postfix_expression.split()
-evaluate = evaluate(len(tokens))
+evaluate = Evaluate(len(tokens))
 if evaluate.validate_postfix_expression(tokens):
     print(evaluate.evaluate_postfix_expression(tokens))
 else:
